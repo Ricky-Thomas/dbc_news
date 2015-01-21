@@ -1,9 +1,9 @@
 post '/login' do
-  @user = User.find_by(name: params[:user][:email])
+  @user = User.find_by(email: params[:user][:email])
 
   if @user.try(:authenticate, params[:user][:password])
     session[:user_id] = @user.id
-    erb :home
+    redirect "/"
   end
   set_error('Login Failed, Please Try Again')
   redirect "/"
