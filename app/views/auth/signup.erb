@@ -1,0 +1,55 @@
+<div id="signup" style="display: block; position: fixed; opacity: 1; z-index: 11000; left: 50%; margin-left: -202px; top: 200px;">
+      <div id="signup-ct">
+        <div id="signup-header">
+          <h2>Create a new account</h2>
+          <p>Share your favorite resources with all of DBC</p>
+          <a class="modal_close" href="#"></a>
+        </div>
+
+        <form action="">
+
+          <div class="txt-fld">
+            <label>Username</label>
+            <input name="user[name]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label>Email address</label>
+            <input name="user[name]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label>Password</label>
+            <input name="user[password]" type="text">
+          </div>
+          <div class="txt-fld">
+            <label>Cohort</label>
+              <select id="cohort_dropdown" name="user[cohort]">
+                <% @cohorts = ["Osprey", "Raccoons", "Rock Doves", "Eastern Moose", "Squirrels"] %>
+                <% @cohorts.each do |cohort| %>
+                  <option value="<%= cohort %>"><%= cohort %></option>
+                <% end %>
+              </select>
+          </div>
+          <div class="txt-fld">
+            <label>City</label>
+              <select id="city_dropdown" name="user[city]">
+                <% @cities = ["New York", "San Francisco", "Chicago"] %>
+                <% @cities.each do |city| %>
+                  <option value="<%= city %>"><%= city %></option>
+                <% end %>
+              </select>
+          </div>
+          <div class="txt-fld">
+            <label>Phase</label>
+              <select id="phase_dropdown" name="user[phase]">
+                <% @phases = ["Phase 0", "Phase 1", "Phase 2", "Phase 3", "Alumni"] %>
+                <% @phases.each do |phase| %>
+                  <option value="<%= phase %>"><%= phase %></option>
+                <% end %>
+              </select>
+          </div>
+          <div class="btn-fld">
+            <button type="submit">Sign Up »</button>
+          </div>
+         </form>
+      </div>
+    </div>
