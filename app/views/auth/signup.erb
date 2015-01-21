@@ -6,7 +6,7 @@
           <a class="modal_close" href="#"></a>
         </div>
 
-        <form action="">
+        <form action="/signup" method="POST">
 
           <div class="txt-fld">
             <label>Username</label>
@@ -14,14 +14,20 @@
           </div>
           <div class="txt-fld">
             <label>Email address</label>
-            <input name="user[name]" type="text">
+            <input name="user[email]" type="text">
           </div>
           <div class="txt-fld">
             <label>Password</label>
-            <input name="user[password]" type="text">
+            <input name="user[password]" type="password">
           </div>
           <div class="txt-fld">
-            <label>Cohort</label>
+            <label for="">Confirm Password: </label>
+            <input name="user[password_confirmation]" type="password">
+          </div>
+          <br>
+          Cohort:
+          <div class="txt-fld">
+            <label></label>
               <select id="cohort_dropdown" name="user[cohort]">
                 <% @cohorts = ["Osprey", "Raccoons", "Rock Doves", "Eastern Moose", "Squirrels"] %>
                 <% @cohorts.each do |cohort| %>
@@ -29,8 +35,10 @@
                 <% end %>
               </select>
           </div>
+          <br>
+          City:
           <div class="txt-fld">
-            <label>City</label>
+            <label></label>
               <select id="city_dropdown" name="user[city]">
                 <% @cities = ["New York", "San Francisco", "Chicago"] %>
                 <% @cities.each do |city| %>
@@ -38,8 +46,10 @@
                 <% end %>
               </select>
           </div>
+          <br>
+          Phase:
           <div class="txt-fld">
-            <label>Phase</label>
+            <label></label>
               <select id="phase_dropdown" name="user[phase]">
                 <% @phases = ["Phase 0", "Phase 1", "Phase 2", "Phase 3", "Alumni"] %>
                 <% @phases.each do |phase| %>
