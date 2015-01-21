@@ -26,7 +26,9 @@
       <% if current_user %>
         <a href="/user/<%= current_user.id%>"><%= current_user.name %></a> | <a href="/signout">Logout</a>
       <% else %>
-        <a id="go_login" rel="leanModal" href="#login">LOGIN</a>
+        <a id="go_login" rel="leanModal" href="#login">Login</a>
+        |
+        <a id="go_signup" rel="leanModal" name="signup" href="#signup" align="right">SignUp</a>
       <% end %>
     </span>
   </div>
