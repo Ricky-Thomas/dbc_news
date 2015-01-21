@@ -1,0 +1,16 @@
+<div class="center">
+
+<div class="article_list">
+  <% @articles.each_with_index do |article, index| %>
+    <ul class="post_info">
+        <li style="font-weight:bold"><a href="<%= article.url %>" target="_blank"><%="" + (index + 1).to_s + ". " + article.title %></a></li>
+
+        <li class="li_below_title"><%= article.user.email %>
+           |
+            <%="Created " + (article.created_at.hour - Time.now.hour).to_s + " hours ago"%>
+        </li>
+    </ul>
+  <% end %>
+</div>
+
+</div>
