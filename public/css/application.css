@@ -94,3 +94,7 @@ z-index: 2;
   overflow: auto;
 }
 
+ul {
+  list-style-type: none;
+}
+
