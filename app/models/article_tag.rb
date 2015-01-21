@@ -1,3 +1,4 @@
 class ArticleTag < ActiveRecord::Base
-  # Remember to create a migration!
+  belongs_to :article
+  belongs_to :tag
 end
