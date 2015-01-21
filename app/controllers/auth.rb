@@ -13,7 +13,7 @@ post '/signup' do
   user = User.create(params[:user])
   if user.valid?
     session[:user_id] = user.id
-    redirect "/user/#{user.id}/edit"
+    redirect "/"
   else
     set_error('Signup failed, Please Try Again')
     redirect "/"
