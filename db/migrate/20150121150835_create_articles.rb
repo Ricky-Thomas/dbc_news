@@ -4,6 +4,8 @@ class CreateArticles < ActiveRecord::Migration
       t.string  :title
       t.string  :url
       t.integer :votes
+      t.references :user
+      t.references :category
       t.timestamps
     end
   end
