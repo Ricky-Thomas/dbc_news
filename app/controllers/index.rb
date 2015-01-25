@@ -6,7 +6,3 @@ get '/' do
   end
 end
 
-get '/articles' do
-  @articles = Article.all
-  erb :'article/all'
-end
