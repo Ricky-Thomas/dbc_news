@@ -15,9 +15,10 @@
 
 <div id="post_new_button">
   <form action="/articles" method="POST">
-    title: <input type="text" name="article[title]"><br>
-    url: <input type="text" name="article[url]"><br>
-    tags: <input type="text" name="tags"><br>
+    title:<br><input type="text" name="article[title]"><br>
+    url:<br> <input type="text" name="article[url]"><br>
+    tags:<br> <input type="text" name="tags"><br>
+    <input type="hidden" name="article[user_id]" value="<% current_user.id %>">
     <input type="submit">
   </form>
 </div>
