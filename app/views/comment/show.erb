@@ -1,0 +1,33 @@
+<div class="comment">
+  <p><%= comment.content %></p>
+
+  <p>Written by: <%= comment.user.try(:name) %></p>
+
+  <% if current_user.may_edit?(comment) %>
+    <div class="edit_buttons">
+      <a href="/comment/<%= comment.id %>/edit" class="edit_comment_link">Edit</a>
+
+      <form action="/comment/<%= comment.id %>" method="POST" class="comment_delete">
+        <input type="hidden" name="_method" value="DELETE">
+        <input type="submit" value="Delete!">
+      </form>
+    </div>
+
+    <div class="update_form_box">
+      <%= erb :'comment/edit', locals: {comment: comment} %>
+      <br>
+    </div>
+  <% end %>
+
+  <div class="reply_box">
+    <%= erb :'comment/new', locals: {article_id: comment.article.id, parent_id: comment.id} %>
+  </div>
+
+  <div class="replies">
+    <ul>
+      <% comment.replies.each do |comment| %>
+        <li><%= erb :'comment/show', locals: {comment: comment} %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
